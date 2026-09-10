@@ -1,0 +1,274 @@
+{
+  "results": [
+    {
+      "step": "theme-list",
+      "field": "theme ids present (order + count)",
+      "pass": true,
+      "actual": [
+        "classic",
+        "rainbow",
+        "murica",
+        "grayscale",
+        "blues",
+        "greenie",
+        "valentines",
+        "blackout",
+        "xmas",
+        "sunset",
+        "grape"
+      ],
+      "expected": [
+        "classic",
+        "rainbow",
+        "murica",
+        "grayscale",
+        "blues",
+        "greenie",
+        "valentines",
+        "blackout",
+        "xmas",
+        "sunset",
+        "grape"
+      ]
+    },
+    {
+      "step": "theme-classic",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(42, 90, 168)",
+      "expected": "rgb(42, 90, 168)"
+    },
+    {
+      "step": "theme-classic",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "classic",
+      "expected": "classic"
+    },
+    {
+      "step": "theme-classic",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-rainbow",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(194, 59, 59)",
+      "expected": "rgb(194, 59, 59)"
+    },
+    {
+      "step": "theme-rainbow",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "rainbow",
+      "expected": "rainbow"
+    },
+    {
+      "step": "theme-rainbow",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-murica",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(168, 48, 43)",
+      "expected": "rgb(168, 48, 43)"
+    },
+    {
+      "step": "theme-murica",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "murica",
+      "expected": "murica"
+    },
+    {
+      "step": "theme-murica",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-grayscale",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(92, 92, 92)",
+      "expected": "rgb(92, 92, 92)"
+    },
+    {
+      "step": "theme-grayscale",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "grayscale",
+      "expected": "grayscale"
+    },
+    {
+      "step": "theme-grayscale",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-blues",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(111, 166, 217)",
+      "expected": "rgb(111, 166, 217)"
+    },
+    {
+      "step": "theme-blues",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "blues",
+      "expected": "blues"
+    },
+    {
+      "step": "theme-blues",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-greenie",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(127, 191, 111)",
+      "expected": "rgb(127, 191, 111)"
+    },
+    {
+      "step": "theme-greenie",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "greenie",
+      "expected": "greenie"
+    },
+    {
+      "step": "theme-greenie",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-valentines",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(242, 166, 189)",
+      "expected": "rgb(242, 166, 189)"
+    },
+    {
+      "step": "theme-valentines",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "valentines",
+      "expected": "valentines"
+    },
+    {
+      "step": "theme-valentines",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-blackout",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(22, 22, 22)",
+      "expected": "rgb(22, 22, 22)"
+    },
+    {
+      "step": "theme-blackout",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "blackout",
+      "expected": "blackout"
+    },
+    {
+      "step": "theme-blackout",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-xmas",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(168, 53, 43)",
+      "expected": "rgb(168, 53, 43)"
+    },
+    {
+      "step": "theme-xmas",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "xmas",
+      "expected": "xmas"
+    },
+    {
+      "step": "theme-xmas",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-sunset",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(224, 178, 63)",
+      "expected": "rgb(224, 178, 63)"
+    },
+    {
+      "step": "theme-sunset",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "sunset",
+      "expected": "sunset"
+    },
+    {
+      "step": "theme-sunset",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "theme-grape",
+      "field": ".cell.col-b computed background-color",
+      "pass": true,
+      "actual": "rgb(201, 168, 224)",
+      "expected": "rgb(201, 168, 224)"
+    },
+    {
+      "step": "theme-grape",
+      "field": "persisted bingoCallerTheme",
+      "pass": true,
+      "actual": "grape",
+      "expected": "grape"
+    },
+    {
+      "step": "theme-grape",
+      "field": "exactly one active theme-row, matching selection",
+      "pass": true,
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "step": "after-reload-theme-persists",
+      "field": ".cell.col-b computed background-color survives reload",
+      "pass": true,
+      "actual": "rgb(201, 168, 224)",
+      "expected": "rgb(201, 168, 224)"
+    }
+  ],
+  "failedCount": 0
+}

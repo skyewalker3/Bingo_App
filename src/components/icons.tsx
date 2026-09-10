@@ -14,3 +14,11 @@ export function MapPinIcon({ size = 15 }: IconProps) {
     </svg>
   );
 }
+
+export function PaletteIcon({ size = 15 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M12 3a9 9 0 0 0 0 18c1.66 0 3-1.34 3-3 0-.79-.31-1.5-.81-2.05-.2-.22-.31-.51-.31-.82 0-.69.56-1.13 1.25-1.13H17c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zM7.5 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+    </svg>
+  );
+}
