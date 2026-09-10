@@ -1,0 +1,245 @@
+{
+  "results": [
+    {
+      "step": "location-set",
+      "field": "board.currentLocation",
+      "pass": true,
+      "actual": "Church Hall Tuesday",
+      "expected": "Church Hall Tuesday"
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "rounds[0] (excl. endedAt)",
+      "pass": true,
+      "actual": {
+        "numbers": [
+          7,
+          33,
+          50
+        ],
+        "location": "Church Hall Tuesday"
+      },
+      "expected": {
+        "numbers": [
+          7,
+          33,
+          50
+        ],
+        "location": "Church Hall Tuesday"
+      }
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "rounds[0].endedAt is a valid ISO timestamp",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "step": "second-round-archived",
+      "field": "rounds (excl. endedAt)",
+      "pass": true,
+      "actual": [
+        {
+          "numbers": [
+            7,
+            33,
+            50
+          ],
+          "location": "Church Hall Tuesday"
+        },
+        {
+          "numbers": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "location": "VFW Friday"
+        }
+      ],
+      "expected": [
+        {
+          "numbers": [
+            7,
+            33,
+            50
+          ],
+          "location": "Church Hall Tuesday"
+        },
+        {
+          "numbers": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "location": "VFW Friday"
+        }
+      ]
+    },
+    {
+      "step": "third-round-no-location",
+      "field": "rounds (excl. endedAt)",
+      "pass": true,
+      "actual": [
+        {
+          "numbers": [
+            7,
+            33,
+            50
+          ],
+          "location": "Church Hall Tuesday"
+        },
+        {
+          "numbers": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "location": "VFW Friday"
+        },
+        {
+          "numbers": [
+            7,
+            40,
+            60
+          ],
+          "location": ""
+        }
+      ],
+      "expected": [
+        {
+          "numbers": [
+            7,
+            33,
+            50
+          ],
+          "location": "Church Hall Tuesday"
+        },
+        {
+          "numbers": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "location": "VFW Friday"
+        },
+        {
+          "numbers": [
+            7,
+            40,
+            60
+          ],
+          "location": ""
+        }
+      ]
+    },
+    {
+      "step": "history-modal-open-all",
+      "field": "roundsSummary",
+      "pass": true,
+      "actual": "3 rounds logged across all locations",
+      "expected": "3 rounds logged across all locations"
+    },
+    {
+      "step": "history-modal-open-all",
+      "field": "locationFilterOptions",
+      "pass": true,
+      "actual": [
+        "All locations",
+        "Church Hall Tuesday",
+        "Unspecified location",
+        "VFW Friday"
+      ],
+      "expected": [
+        "All locations",
+        "Church Hall Tuesday",
+        "Unspecified location",
+        "VFW Friday"
+      ]
+    },
+    {
+      "step": "history-frequency-tab",
+      "field": "topNumbersText (normalized)",
+      "pass": true,
+      "actual": "1.B-73×2.B-81×3.B-91×4.I-211×5.I-221×6.N-331×7.N-361×8.N-401×9.G-501×10.G-511×",
+      "expected": "1.B-73×2.B-81×3.B-91×4.I-211×5.I-221×6.N-331×7.N-361×8.N-401×9.G-501×10.G-511×"
+    },
+    {
+      "step": "history-filtered-vfw",
+      "field": "roundsSummary",
+      "pass": true,
+      "actual": "1 round logged at VFW Friday",
+      "expected": "1 round logged at VFW Friday"
+    },
+    {
+      "step": "history-filtered-vfw",
+      "field": "clearLastRoundLabel",
+      "pass": true,
+      "actual": "Clear last round at this location",
+      "expected": "Clear last round at this location"
+    },
+    {
+      "step": "history-filtered-vfw",
+      "field": "clearAllHistoryLabel",
+      "pass": true,
+      "actual": "Clear history for this location",
+      "expected": "Clear history for this location"
+    },
+    {
+      "step": "history-filtered-vfw",
+      "field": "topNumbersText (normalized)",
+      "pass": true,
+      "actual": "1.B-71×2.B-81×3.B-91×4.I-211×5.I-221×6.N-361×7.G-511×8.O-661×",
+      "expected": "1.B-71×2.B-81×3.B-91×4.I-211×5.I-221×6.N-361×7.G-511×8.O-661×"
+    },
+    {
+      "step": "clear-last-scoped-confirm",
+      "field": "clearConfirmText",
+      "pass": true,
+      "actual": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+      "expected": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history."
+    },
+    {
+      "step": "history-all-locations-numbers-tab",
+      "field": "roundsSummary",
+      "pass": true,
+      "actual": "3 rounds logged across all locations",
+      "expected": "3 rounds logged across all locations"
+    },
+    {
+      "step": "history-all-locations-numbers-tab",
+      "field": "topNumbersText (normalized)",
+      "pass": true,
+      "actual": "1.B-73×2.B-81×3.B-91×4.I-211×5.I-221×6.N-331×7.N-361×8.N-401×9.G-501×10.G-511×",
+      "expected": "1.B-73×2.B-81×3.B-91×4.I-211×5.I-221×6.N-331×7.N-361×8.N-401×9.G-501×10.G-511×"
+    },
+    {
+      "step": "clear-last-scoped-EXECUTED (new coverage)",
+      "field": "VFW round actually removed",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    }
+  ],
+  "failedCount": 0
+}

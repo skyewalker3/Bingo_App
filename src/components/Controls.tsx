@@ -3,9 +3,10 @@ import { useState } from 'react';
 interface ControlsProps {
   onUndo: () => void;
   onReset: () => void;
+  onOpenHistory: () => void;
 }
 
-export function Controls({ onUndo, onReset }: ControlsProps) {
+export function Controls({ onUndo, onReset, onOpenHistory }: ControlsProps) {
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   return (
@@ -13,6 +14,9 @@ export function Controls({ onUndo, onReset }: ControlsProps) {
       <div className="controls">
         <button className="action" id="undoBtn" onClick={onUndo}>
           Undo last
+        </button>
+        <button className="action gold" id="historyBtn" onClick={onOpenHistory}>
+          History
         </button>
         <button className="action danger" id="resetBtn" onClick={() => setConfirmOpen(true)}>
           Reset board
