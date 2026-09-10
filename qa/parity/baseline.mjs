@@ -1,5 +1,5 @@
 // Phase 0 parity baseline capture.
-// Drives the legacy single-file app (../../index.html) through every feature
+// Drives the legacy single-file app (../../legacy/index.html) through every feature
 // documented in CLAUDE.md, saving screenshots + state snapshots under ./out.
 // This is the diff target for the Vite/React/TS rewrite (Phase 7).
 
@@ -26,7 +26,7 @@ function contentType(p) {
 
 const server = createServer(async (req, res) => {
   try {
-    const urlPath = req.url === '/' ? '/index.html' : req.url;
+    const urlPath = req.url === '/' ? '/legacy/index.html' : req.url;
     const filePath = path.join(repoRoot, decodeURIComponent(urlPath.split('?')[0]));
     const data = await readFile(filePath);
     res.writeHead(200, { 'Content-Type': contentType(filePath) });
@@ -81,7 +81,7 @@ async function clickCell(page, n) {
 }
 
 const page = await browser.newPage({ viewport: { width: 420, height: 900 } });
-await page.goto(baseUrl + '/index.html');
+await page.goto(baseUrl + '/legacy/index.html');
 await page.evaluate(() => localStorage.clear());
 await page.reload();
 
@@ -194,7 +194,7 @@ await record(page, 'scan-step3-results', 'compared card vs history; legend + hot
 // --- scan modal: true "library never loaded" path (block CDN before first navigation) ---
 const offlinePage = await browser.newPage({ viewport: { width: 420, height: 900 } });
 await offlinePage.route('https://cdn.jsdelivr.net/**', route => route.abort());
-await offlinePage.goto(baseUrl + '/index.html');
+await offlinePage.goto(baseUrl + '/legacy/index.html');
 await offlinePage.evaluate(() => localStorage.clear());
 await offlinePage.reload();
 await offlinePage.click('#scanCardBtn');
