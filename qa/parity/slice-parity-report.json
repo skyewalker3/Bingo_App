@@ -1,0 +1,266 @@
+{
+  "results": [
+    {
+      "step": "initial-empty-state",
+      "field": "countVal",
+      "pass": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "step": "initial-empty-state",
+      "field": "lastBall",
+      "pass": true,
+      "actual": "—",
+      "expected": "—"
+    },
+    {
+      "step": "initial-empty-state",
+      "field": "lastLabel",
+      "pass": true,
+      "actual": "Nothing yet — tap a number below",
+      "expected": "Nothing yet — tap a number below"
+    },
+    {
+      "step": "initial-empty-state",
+      "field": "confirmBarShown",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "step": "initial-empty-state",
+      "field": "board.called",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "step": "five-called",
+      "field": "countVal",
+      "pass": true,
+      "actual": "5",
+      "expected": "5"
+    },
+    {
+      "step": "five-called",
+      "field": "lastBall",
+      "pass": true,
+      "actual": "70",
+      "expected": "70"
+    },
+    {
+      "step": "five-called",
+      "field": "lastLabel",
+      "pass": true,
+      "actual": "O-70",
+      "expected": "O-70"
+    },
+    {
+      "step": "five-called",
+      "field": "board.called",
+      "pass": true,
+      "actual": [
+        7,
+        20,
+        33,
+        50,
+        70
+      ],
+      "expected": [
+        7,
+        20,
+        33,
+        50,
+        70
+      ]
+    },
+    {
+      "step": "five-called",
+      "field": "board.history",
+      "pass": true,
+      "actual": [
+        7,
+        20,
+        33,
+        50,
+        70
+      ],
+      "expected": [
+        7,
+        20,
+        33,
+        50,
+        70
+      ]
+    },
+    {
+      "step": "unmark-i20",
+      "field": "countVal",
+      "pass": true,
+      "actual": "4",
+      "expected": "4"
+    },
+    {
+      "step": "unmark-i20",
+      "field": "lastBall",
+      "pass": true,
+      "actual": "70",
+      "expected": "70"
+    },
+    {
+      "step": "unmark-i20",
+      "field": "lastLabel",
+      "pass": true,
+      "actual": "O-70",
+      "expected": "O-70"
+    },
+    {
+      "step": "unmark-i20",
+      "field": "board.called",
+      "pass": true,
+      "actual": [
+        7,
+        33,
+        50,
+        70
+      ],
+      "expected": [
+        7,
+        33,
+        50,
+        70
+      ]
+    },
+    {
+      "step": "undo-last",
+      "field": "countVal",
+      "pass": true,
+      "actual": "3",
+      "expected": "3"
+    },
+    {
+      "step": "undo-last",
+      "field": "lastBall",
+      "pass": true,
+      "actual": "50",
+      "expected": "50"
+    },
+    {
+      "step": "undo-last",
+      "field": "lastLabel",
+      "pass": true,
+      "actual": "G-50",
+      "expected": "G-50"
+    },
+    {
+      "step": "undo-last",
+      "field": "board.called",
+      "pass": true,
+      "actual": [
+        7,
+        33,
+        50
+      ],
+      "expected": [
+        7,
+        33,
+        50
+      ]
+    },
+    {
+      "step": "undo-last",
+      "field": "board.history",
+      "pass": true,
+      "actual": [
+        7,
+        33,
+        50
+      ],
+      "expected": [
+        7,
+        33,
+        50
+      ]
+    },
+    {
+      "step": "reset-confirm-shown",
+      "field": "confirmBarShown",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "step": "reset-cancelled",
+      "field": "confirmBarShown",
+      "pass": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "step": "reset-cancelled",
+      "field": "countVal",
+      "pass": true,
+      "actual": "3",
+      "expected": "3"
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "countVal",
+      "pass": true,
+      "actual": "0",
+      "expected": "0"
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "lastBall",
+      "pass": true,
+      "actual": "—",
+      "expected": "—"
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "lastLabel",
+      "pass": true,
+      "actual": "Nothing yet — tap a number below",
+      "expected": "Nothing yet — tap a number below"
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "board.called",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "board.history",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "board.rounds[0].numbers",
+      "pass": true,
+      "actual": [
+        7,
+        33,
+        50
+      ],
+      "expected": [
+        7,
+        33,
+        50
+      ]
+    },
+    {
+      "step": "reset-confirmed",
+      "field": "board.rounds[0].location (expected \"\" - no location UI in this slice)",
+      "pass": true,
+      "actual": "",
+      "expected": ""
+    }
+  ],
+  "failedCount": 0
+}
