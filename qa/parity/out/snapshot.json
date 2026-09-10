@@ -1,0 +1,1747 @@
+{
+  "steps": [
+    {
+      "name": "initial-empty-state",
+      "note": "fresh load, nothing called",
+      "file": "00-initial-empty-state.png",
+      "state": {
+        "board": null,
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "five-called",
+      "note": "called B7, I20, N33, G50, O70 in order; O70 should be \"latest\"",
+      "file": "01-five-called.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            20,
+            33,
+            50,
+            70
+          ],
+          "history": [
+            7,
+            20,
+            33,
+            50,
+            70
+          ],
+          "rounds": [],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "5",
+        "lastBall": "70",
+        "lastLabel": "O-70",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "unmark-i20",
+      "note": "tapped I20 again to unmark it; count should drop, history should drop 20",
+      "file": "02-unmark-i20.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            33,
+            50,
+            70
+          ],
+          "history": [
+            7,
+            33,
+            50,
+            70
+          ],
+          "rounds": [],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "4",
+        "lastBall": "70",
+        "lastLabel": "O-70",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "undo-last",
+      "note": "Undo last pressed; should remove O70 (the last history entry), new latest should be N33",
+      "file": "03-undo-last.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            33,
+            50
+          ],
+          "history": [
+            7,
+            33,
+            50
+          ],
+          "rounds": [],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "3",
+        "lastBall": "50",
+        "lastLabel": "G-50",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "location-set",
+      "note": "typed a location; should be live-persisted to state.currentLocation",
+      "file": "04-location-set.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            33,
+            50
+          ],
+          "history": [
+            7,
+            33,
+            50
+          ],
+          "rounds": [],
+          "currentLocation": "Church Hall Tuesday"
+        },
+        "theme": null,
+        "countVal": "3",
+        "lastBall": "50",
+        "lastLabel": "G-50",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "reset-confirm-shown",
+      "note": "Reset board clicked; in-page confirm bar should show, no native confirm() dialog",
+      "file": "05-reset-confirm-shown.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            33,
+            50
+          ],
+          "history": [
+            7,
+            33,
+            50
+          ],
+          "rounds": [],
+          "currentLocation": "Church Hall Tuesday"
+        },
+        "theme": null,
+        "countVal": "3",
+        "lastBall": "50",
+        "lastLabel": "G-50",
+        "confirmBarShown": true,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "reset-cancelled",
+      "note": "Cancel clicked; confirm bar hidden, board state unchanged",
+      "file": "06-reset-cancelled.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            33,
+            50
+          ],
+          "history": [
+            7,
+            33,
+            50
+          ],
+          "rounds": [],
+          "currentLocation": "Church Hall Tuesday"
+        },
+        "theme": null,
+        "countVal": "3",
+        "lastBall": "50",
+        "lastLabel": "G-50",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "reset-confirmed",
+      "note": "Reset confirmed; called/history cleared, one round archived with location \"Church Hall Tuesday\"",
+      "file": "07-reset-confirmed.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            }
+          ],
+          "currentLocation": "Church Hall Tuesday"
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "second-round-called",
+      "note": "second round called at VFW Friday, before reset",
+      "file": "08-second-round-called.png",
+      "state": {
+        "board": {
+          "called": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "history": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            36,
+            51,
+            66
+          ],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            }
+          ],
+          "currentLocation": "VFW Friday"
+        },
+        "theme": null,
+        "countVal": "8",
+        "lastBall": "66",
+        "lastLabel": "O-66",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "second-round-archived",
+      "note": "second round archived at VFW Friday; two rounds now exist across two locations",
+      "file": "09-second-round-archived.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            }
+          ],
+          "currentLocation": "VFW Friday"
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "third-round-no-location",
+      "note": "third round archived with no location typed -> should bucket as \"Unspecified location\"",
+      "file": "10-third-round-no-location.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "history-modal-open-all",
+      "note": "History modal open, default \"All locations\" filter, Number history tab",
+      "file": "11-history-modal-open-all.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "history-frequency-tab",
+      "note": "switched to Frequency stats tab; top-10 bars should reflect combined tally (7 called 3x across rounds)",
+      "file": "12-history-frequency-tab.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "1.\nB-7\n3×\n2.\nB-8\n1×\n3.\nB-9\n1×\n4.\nI-21\n1×\n5.\nI-22\n1×\n6.\nN-33\n1×\n7.\nN-36\n1×\n8.\nN-40\n1×\n9.\nG-50\n1×\n10.\nG-51\n1×",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "history-filtered-vfw",
+      "note": "location filter set to VFW Friday; summary + tally should be scoped to that round only",
+      "file": "13-history-filtered-vfw.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "1 round logged at VFW Friday",
+        "clearLastRoundLabel": "Clear last round at this location",
+        "clearAllHistoryLabel": "Clear history for this location",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "1.\nB-7\n1×\n2.\nB-8\n1×\n3.\nB-9\n1×\n4.\nI-21\n1×\n5.\nI-22\n1×\n6.\nN-36\n1×\n7.\nG-51\n1×\n8.\nO-66\n1×",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "clear-last-scoped-confirm",
+      "note": "Clear last round (scoped) clicked; confirm text should mention VFW Friday specifically",
+      "file": "14-clear-last-scoped-confirm.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "1 round logged at VFW Friday",
+        "clearLastRoundLabel": "Clear last round at this location",
+        "clearAllHistoryLabel": "Clear history for this location",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "1.\nB-7\n1×\n2.\nB-8\n1×\n3.\nB-9\n1×\n4.\nI-21\n1×\n5.\nI-22\n1×\n6.\nN-36\n1×\n7.\nG-51\n1×\n8.\nO-66\n1×",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "history-all-locations-numbers-tab",
+      "note": "back to All locations, Number history tab, before any clears",
+      "file": "15-history-all-locations-numbers-tab.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-classic",
+      "note": "theme \"classic\" selected; .cell.col-b computed background-color = rgb(42, 90, 168)",
+      "file": "16-theme-classic.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "classic",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-rainbow",
+      "note": "theme \"rainbow\" selected; .cell.col-b computed background-color = rgb(194, 59, 59)",
+      "file": "17-theme-rainbow.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "rainbow",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-murica",
+      "note": "theme \"murica\" selected; .cell.col-b computed background-color = rgb(168, 48, 43)",
+      "file": "18-theme-murica.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "murica",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-grayscale",
+      "note": "theme \"grayscale\" selected; .cell.col-b computed background-color = rgb(92, 92, 92)",
+      "file": "19-theme-grayscale.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grayscale",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-blues",
+      "note": "theme \"blues\" selected; .cell.col-b computed background-color = rgb(111, 166, 217)",
+      "file": "20-theme-blues.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "blues",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-greenie",
+      "note": "theme \"greenie\" selected; .cell.col-b computed background-color = rgb(127, 191, 111)",
+      "file": "21-theme-greenie.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "greenie",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-valentines",
+      "note": "theme \"valentines\" selected; .cell.col-b computed background-color = rgb(242, 166, 189)",
+      "file": "22-theme-valentines.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "valentines",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-blackout",
+      "note": "theme \"blackout\" selected; .cell.col-b computed background-color = rgb(22, 22, 22)",
+      "file": "23-theme-blackout.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "blackout",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-xmas",
+      "note": "theme \"xmas\" selected; .cell.col-b computed background-color = rgb(168, 53, 43)",
+      "file": "24-theme-xmas.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "xmas",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-sunset",
+      "note": "theme \"sunset\" selected; .cell.col-b computed background-color = rgb(224, 178, 63)",
+      "file": "25-theme-sunset.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "sunset",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "theme-grape",
+      "note": "theme \"grape\" selected; .cell.col-b computed background-color = rgb(201, 168, 224)",
+      "file": "26-theme-grape.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grape",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear the last round logged at VFW Friday? This cannot be undone, and you will lose that round’s history.",
+        "roundsSummary": "3 rounds logged across all locations",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations",
+          "Church Hall Tuesday",
+          "Unspecified location",
+          "VFW Friday"
+        ],
+        "topNumbersText": "\n          1.\n          \n            \n            B-7\n          \n          3×\n        \n          2.\n          \n            \n            B-8\n          \n          1×\n        \n          3.\n          \n            \n            B-9\n          \n          1×\n        \n          4.\n          \n            \n            I-21\n          \n          1×\n        \n          5.\n          \n            \n            I-22\n          \n          1×\n        \n          6.\n          \n            \n            N-33\n          \n          1×\n        \n          7.\n          \n            \n            N-36\n          \n          1×\n        \n          8.\n          \n            \n            N-40\n          \n          1×\n        \n          9.\n          \n            \n            G-50\n          \n          1×\n        \n          10.\n          \n            \n            G-51\n          \n          1×\n        ",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "after-reload",
+      "note": "page reloaded; called/history should be empty (post-reset), rounds/theme should persist",
+      "file": "27-after-reload.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grape",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "scan-step1-upload",
+      "note": "Scan modal open, upload step",
+      "file": "28-scan-step1-upload.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grape",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": ""
+      }
+    },
+    {
+      "name": "scan-step2-manual-fallback",
+      "note": "Tesseract CDN blocked -> should show manual-entry grid + offline fallback status text",
+      "file": "29-scan-step2-manual-fallback.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grape",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": "Couldn’t read that photo automatically. You can still enter your card’s numbers by hand below."
+      }
+    },
+    {
+      "name": "scan-step3-results",
+      "note": "compared card vs history; legend + hot/warm/cold labels should read exactly as documented",
+      "file": "30-scan-step3-results.png",
+      "state": {
+        "board": {
+          "called": [],
+          "history": [],
+          "rounds": [
+            {
+              "numbers": [
+                7,
+                33,
+                50
+              ],
+              "endedAt": "2026-09-10T22:01:14.001Z",
+              "location": "Church Hall Tuesday"
+            },
+            {
+              "numbers": [
+                7,
+                8,
+                9,
+                21,
+                22,
+                36,
+                51,
+                66
+              ],
+              "endedAt": "2026-09-10T22:01:14.934Z",
+              "location": "VFW Friday"
+            },
+            {
+              "numbers": [
+                7,
+                40,
+                60
+              ],
+              "endedAt": "2026-09-10T22:01:15.401Z",
+              "location": ""
+            }
+          ],
+          "currentLocation": ""
+        },
+        "theme": "grape",
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "Based on 3 logged rounds: 4 of this card's numbers have come up more than most, and 20 have come up less than most. Every game is a fresh random draw — this is a look back at your history, not a forecast for tonight.",
+        "scanStatus": "Couldn’t read that photo automatically. You can still enter your card’s numbers by hand below."
+      }
+    },
+    {
+      "name": "scan-tesseract-never-loaded",
+      "note": "CDN blocked from first navigation -> typeof Tesseract === \"undefined\" branch, different copy than the recognize()-throws case",
+      "file": "31-scan-tesseract-never-loaded.png",
+      "state": {
+        "board": null,
+        "theme": null,
+        "countVal": "0",
+        "lastBall": "—",
+        "lastLabel": "Nothing yet — tap a number below",
+        "confirmBarShown": false,
+        "clearConfirmText": "Are you sure you would like to clear? This cannot be undone, and you will lose all history.",
+        "roundsSummary": "No rounds logged yet",
+        "clearLastRoundLabel": "Clear last round",
+        "clearAllHistoryLabel": "Clear all history",
+        "locationFilterOptions": [
+          "All locations"
+        ],
+        "topNumbersText": "",
+        "scanResultSummary": "",
+        "scanStatus": "Couldn’t load the photo-reading library (needs an internet connection the first time). You can still enter your card’s numbers by hand below."
+      }
+    }
+  ]
+}
