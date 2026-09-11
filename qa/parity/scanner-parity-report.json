@@ -1,0 +1,113 @@
+{
+  "results": [
+    {
+      "step": "bucketing-algorithm",
+      "field": "places every recognized number in its correct cell",
+      "pass": true,
+      "actual": [
+        2,
+        7,
+        12,
+        5,
+        10,
+        19,
+        24,
+        29,
+        22,
+        17,
+        33,
+        44,
+        null,
+        38,
+        35,
+        48,
+        53,
+        58,
+        51,
+        46,
+        62,
+        67,
+        72,
+        65,
+        70
+      ],
+      "expected": [
+        2,
+        7,
+        12,
+        5,
+        10,
+        19,
+        24,
+        29,
+        22,
+        17,
+        33,
+        44,
+        null,
+        38,
+        35,
+        48,
+        53,
+        58,
+        51,
+        46,
+        62,
+        67,
+        72,
+        65,
+        70
+      ]
+    },
+    {
+      "step": "scan-e2e",
+      "field": "reached review grid after real-image OCR with zero non-localhost requests",
+      "pass": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "step": "scan-e2e",
+      "field": "numbers called in both logged rounds classify hot",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "step": "scan-e2e",
+      "field": "numbers never called classify cold",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "step": "scan-e2e",
+      "field": "back-to-edit preserves the corrected value (not the raw OCR guess)",
+      "pass": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "step": "scan-recognize-fails",
+      "field": "shows the recognize-failure fallback message",
+      "pass": true,
+      "actual": "Couldn’t read that photo automatically. You can still enter your card’s numbers by hand below.",
+      "expected": "Couldn’t read that photo automatically. You can still enter your card’s numbers by hand below."
+    },
+    {
+      "step": "scan-never-loaded",
+      "field": "shows the library-never-loaded fallback message",
+      "pass": true,
+      "actual": "Couldn’t load the photo-reading library (needs an internet connection the first time). You can still enter your card’s numbers by hand below.",
+      "expected": "Couldn’t load the photo-reading library (needs an internet connection the first time). You can still enter your card’s numbers by hand below."
+    },
+    {
+      "step": "scan-copy",
+      "field": "disclaimer mentions \"past frequency only\" (matches legacy copy)",
+      "pass": true,
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "failedCount": 0
+}

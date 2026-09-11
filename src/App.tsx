@@ -3,9 +3,10 @@ import { Board } from './components/Board';
 import { Controls } from './components/Controls';
 import { Header } from './components/Header';
 import { HistoryModal } from './components/HistoryModal';
-import { PaletteIcon } from './components/icons';
+import { CameraIcon, PaletteIcon } from './components/icons';
 import { LastCalled } from './components/LastCalled';
 import { LocationBar } from './components/LocationBar';
+import { ScanModal } from './components/ScanModal';
 import { ThemeModal } from './components/ThemeModal';
 import { useBoardState } from './hooks/useBoardState';
 import { useTheme } from './hooks/useTheme';
@@ -16,6 +17,7 @@ function App() {
   const { themeId, setThemeId } = useTheme();
   const [historyOpen, setHistoryOpen] = useState(false);
   const [themeOpen, setThemeOpen] = useState(false);
+  const [scanOpen, setScanOpen] = useState(false);
   const calledSet = new Set(state.called);
 
   return (
@@ -29,6 +31,12 @@ function App() {
       <LastCalled latest={latest} />
       <Board calledSet={calledSet} latest={latest} onToggle={toggle} />
       <Controls onUndo={undo} onReset={reset} onOpenHistory={() => setHistoryOpen(true)} />
+      <div className="controls" style={{ marginTop: '10px' }}>
+        <button className="action gold" id="scanCardBtn" style={{ flex: 1 }} onClick={() => setScanOpen(true)}>
+          <CameraIcon size={15} />
+          <span style={{ marginLeft: '5px' }}>Scan my card vs. history</span>
+        </button>
+      </div>
       <div className="controls" style={{ marginTop: '10px' }}>
         <button className="action" id="themeBtn" style={{ flex: 1 }} onClick={() => setThemeOpen(true)}>
           <PaletteIcon />
@@ -45,6 +53,7 @@ function App() {
         onClearAllRounds={clearAllRounds}
       />
       <ThemeModal isOpen={themeOpen} themeId={themeId} onSelect={setThemeId} onClose={() => setThemeOpen(false)} />
+      <ScanModal isOpen={scanOpen} rounds={state.rounds} onClose={() => setScanOpen(false)} />
     </div>
   );
 }
