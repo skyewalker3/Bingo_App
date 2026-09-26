@@ -15,6 +15,15 @@
     --col-n-bg: #6a3f9e; --col-n-border: #7f4fb8;
     --col-g-bg: #a8352b; --col-g-border: #c24337;
     --col-o-bg: #b56a1a; --col-o-border: #cf7d22;
+
+    /* Notch / home-indicator insets (0 on devices without either, or when
+       viewport-fit=cover isn't honored e.g. a plain browser tab, not
+       standalone). Only meaningful with the `viewport-fit=cover` <meta
+       viewport> in index.html -- without it these always resolve to 0. */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
   }
 
   * { box-sizing: border-box; }
@@ -30,7 +39,12 @@
     color: var(--cream);
     display: flex;
     justify-content: center;
-    padding: 28px 16px 60px;
+    /* Base padding plus device safe-area insets, not one or the other --
+       the bottom action buttons and top header must clear the home
+       indicator / notch in standalone mode without losing the existing
+       breathing room on ordinary phones/desktop (where the insets are 0). */
+    padding: calc(28px + var(--safe-top)) calc(16px + var(--safe-right))
+      calc(60px + var(--safe-bottom)) calc(16px + var(--safe-left));
   }
 
   .wrap {
@@ -341,7 +355,11 @@
     background: rgba(10, 16, 19, 0.75);
     align-items: flex-start;
     justify-content: center;
-    padding: 28px 16px;
+    /* Same base-plus-inset approach as body -- the modal close button sits
+       near the top edge and must clear a notch; the bottom edge must clear
+       the home indicator even though the modal itself scrolls internally. */
+    padding: calc(28px + var(--safe-top)) calc(16px + var(--safe-right))
+      calc(28px + var(--safe-bottom)) calc(16px + var(--safe-left));
     overflow-y: auto;
     z-index: 50;
   }

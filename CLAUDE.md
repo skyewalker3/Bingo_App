@@ -28,8 +28,10 @@ nice-to-haves, on any future work:
 - **Touch target size** — controls need to stay comfortably tappable on a
   phone, not just clickable with a mouse.
 - **Viewport behavior on phones** — layout must hold up on real phone
-  viewports (safe areas, small screens, on-screen keyboard pushing content),
-  not just a resized desktop browser window.
+  viewports (safe areas — see "Safe-area insets" below, small screens,
+  on-screen keyboard pushing content), not just a resized desktop browser
+  window. The on-screen-keyboard case is still unhandled; safe areas are
+  done.
 - **Offline capability** — the app must keep working with no network
   connection. This now includes OCR (see Card scanner below) — the last
   CDN dependency was removed in `e2bca68` — and, as of the PWA layer (see
@@ -115,14 +117,55 @@ alongside the normal JS/CSS.
   notch) — `vite-plugin-pwa` injects the `<link rel="manifest">` and the
   service-worker registration `<script>` itself at build time; it does not
   add those meta tags for you.
-- **Full `env(safe-area-inset-*)` CSS padding is not done yet** —
-  `viewport-fit=cover` above only stops the browser chrome itself from
-  clipping/misbehaving in standalone mode; the app's own layout doesn't yet
-  reserve space around notches/home-indicators. That's a follow-on task, not
-  covered by the PWA layer itself.
+- **`env(safe-area-inset-*)` CSS padding reserves space around
+  notches/home-indicators** — see the "Safe-area insets" section below.
+  `viewport-fit=cover` (previous bullet) only stops the browser chrome
+  itself from clipping/misbehaving in standalone mode; the actual layout
+  padding is the separate piece described there.
 - Dev server (`npm run dev`) does **not** register a service worker by
   default (`devOptions.enabled` is unset/false) — test PWA/offline behavior
   against `npm run build && npm run preview`, not the dev server.
+
+## Safe-area insets
+
+Standalone/fullscreen launch (see PWA layer above) can put the app under an
+iOS-style notch or behind the home-indicator gesture area, so the layout
+reserves space for both via `env(safe-area-inset-*)`, not just the
+`viewport-fit=cover` meta tag that makes those values available at all.
+
+- `src/index.css`'s `:root` defines `--safe-top`/`--safe-right`/
+  `--safe-bottom`/`--safe-left`, each `env(safe-area-inset-*, 0px)` — the
+  `0px` fallback means these are inert (evaluate to plain `0`) on any
+  browser/device without an inset to report, including every desktop
+  browser and a plain (non-standalone) mobile tab.
+- Exactly two rules consume them, both by adding the inset on top of the
+  existing base padding via `calc()`, not replacing it:
+  - `body`'s padding (`28px 16px 60px` base) — covers the whole in-page UI:
+    header, board, controls, footer.
+  - `.modal-overlay`'s padding (`28px 16px` base) — covers every modal
+    (History, Theme, Scan), since they're all `position: fixed` overlays
+    that escape `body`'s own padding.
+- This is deliberately only two rules, not per-component padding — both
+  `body` and `.modal-overlay` are the outermost box for everything they
+  contain, so padding them once is sufficient; don't add redundant
+  safe-area padding to children (header, footer, `.modal`, etc.) of either.
+- **Verified with Chromium's `Emulation.setSafeAreaInsetsOverride` CDP
+  method** (the same mechanism Chrome DevTools' own "Show safe area"
+  device-toolbar feature uses), not just by eyeballing the CSS: a Playwright
+  script drove a real iPhone-14-emulated page, applied non-zero insets via
+  CDP, and asserted the *rendered* geometry — `getComputedStyle` padding
+  values, the header's and modal-close-button's on-screen position clearing
+  the simulated 47px top notch, and the footer sitting exactly 34px (the
+  simulated home-indicator inset) above the true bottom of the page even
+  after scrolling all the way down. Also checked a 0-inset baseline (nothing
+  regresses on ordinary devices) and left/right insets (a landscape-style
+  notch). This is the same rigor as the offline verification in the PWA
+  layer section — computed styles alone would only prove the CSS parses,
+  not that it actually reserves visible space.
+- The on-screen-keyboard-pushing-content case from Project goals above is a
+  distinct, still-unaddressed problem (`visualViewport` resize, unrelated to
+  `env(safe-area-inset-*)`) — don't conflate the two if picking this back up
+  later.
 
 ## Feature inventory
 
