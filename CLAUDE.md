@@ -26,7 +26,9 @@ updating that `base` value. Treat the following as hard constraints, not
 nice-to-haves, on any future work:
 
 - **Touch target size** — controls need to stay comfortably tappable on a
-  phone, not just clickable with a mouse.
+  phone, not just clickable with a mouse — see "Touch targets" below. Done
+  for every current control; re-audit whenever a new tappable control is
+  added.
 - **Viewport behavior on phones** — layout must hold up on real phone
   viewports (safe areas — see "Safe-area insets" below, small screens,
   on-screen keyboard pushing content), not just a resized desktop browser
@@ -166,6 +168,52 @@ reserves space for both via `env(safe-area-inset-*)`, not just the
   distinct, still-unaddressed problem (`visualViewport` resize, unrelated to
   `env(safe-area-inset-*)`) — don't conflate the two if picking this back up
   later.
+
+## Touch targets
+
+Every tappable/clickable control in the app — board cells, action buttons,
+confirm-bar buttons, modal close buttons, history tabs, the location filter
+`<select>`, theme-picker rows, the location text input — meets a 44×44 CSS
+px minimum (Apple HIG's baseline "comfortably tappable" size; also at or
+above Material Design's 48dp guidance once device pixel ratio is accounted
+for). This was an actual audit, not a guess from reading the CSS:
+
+- A Playwright script measured `getBoundingClientRect()` width/height for
+  every real interactive element on Playwright's `devices['iPhone SE']`
+  profile (320×568 logical px — the narrowest viewport of any built-in
+  device profile) — the worst case for anything sized as a fraction of
+  viewport width. It opened every modal (History,
+  Theme, Scan) and both confirm bars, since `HistoryModal`/`ThemeModal`/
+  `ScanModal`/`Controls`' confirm bars are always mounted in the DOM
+  (visibility toggled via a `.show` class, not conditional rendering) and
+  return zero-size boxes via `display: none` until actually opened — a
+  naive audit that skipped opening them would have silently missed every
+  control inside.
+- 11 of the ~21 audited controls initially failed: the location input
+  (`min-height` added, `src/index.css`'s `.location-bar input`), both
+  confirm-bar buttons (`.confirm-bar button`), all three modals' close
+  buttons (`.modal-close`), the history location filter (`.location-filter
+  select`), both history tabs (`.tab-btn`), and theme-picker rows
+  (`.theme-row`). Each got a `min-height: 44px` (`.modal-close` also got
+  `min-width: 44px`). The plain `<input>`/`<select>` and the flex-row
+  `.theme-row` (already `align-items: center`) re-centered their content
+  automatically once taller; every `<button>` variant (`.confirm-bar
+  button`, `.modal-close`, `.tab-btn`) needed `display: flex; align-items:
+  center; justify-content: center;` added explicitly too, or its label
+  stayed pinned to the top of the now-taller box — confirmed by
+  screenshot, not assumed.
+- Board cells (`.cell`) already cleared the minimum without changes (44.4px
+  on the 320px-wide iPhone SE profile) but with essentially no margin —
+  don't shrink the board's padding/gaps or add a 6th column-like element
+  without re-measuring at that width, or cells will drop below 44px.
+- Verified by re-running the same measurement script after the CSS changes
+  (all 21 controls passed) and by screenshotting the main page, confirm
+  bar, History modal, and Theme modal on iPhone SE to confirm nothing
+  visually broke (button text still centered, no overflow, no layout
+  shift beyond the intended size increase) — plus re-running the existing
+  `qa/parity` suite (`compare-slice.mjs`, `compare-history.mjs`,
+  `compare-themes.mjs`) against the built app, which still passed with zero
+  regressions.
 
 ## Feature inventory
 

@@ -105,6 +105,9 @@
 
   .location-bar input {
     flex: 1;
+    /* min-height (not just the parent's padding) so the input's own tap
+       target -- not just the row around it -- meets the 44px minimum. */
+    min-height: 44px;
     background: transparent;
     border: none;
     color: var(--cream);
@@ -324,6 +327,13 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 13px;
     padding: 7px 12px;
+    /* min-height alone won't vertically center a <button>'s label in every
+       browser once the box grows past its intrinsic content height --
+       flex-center explicitly rather than rely on that. */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -398,7 +408,15 @@
     font-size: 26px;
     line-height: 1;
     cursor: pointer;
-    padding: 0 4px;
+    /* The glyph itself stays the same visual size (font-size); min-width/
+       min-height + flex-centering only grow the invisible tap area around
+       it, so the "x" doesn't visually get any bigger or shift position. */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
 
   .modal-sub {
@@ -423,6 +441,7 @@
 
   .location-filter select {
     flex: 1;
+    min-height: 44px;
     background: rgba(242, 234, 217, 0.05);
     border: 1px solid var(--line);
     border-radius: 6px;
@@ -441,6 +460,10 @@
 
   .tab-btn {
     flex: 1;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     border-bottom: 2px solid transparent;
@@ -716,6 +739,7 @@
   .theme-row {
     display: flex;
     align-items: center;
+    min-height: 44px;
     gap: 12px;
     padding: 10px 12px;
     border-radius: 8px;
