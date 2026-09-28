@@ -19,11 +19,14 @@ scanner ported, OCR made fully self-hosted).
 This app is used in real weekly bingo sessions and **must work offline** —
 that's not aspirational, it's a hard constraint on any change. It's headed
 toward a mobile-friendly web app and, eventually, an App Store / Play Store
-release. Currently deployed as a GitHub Pages project site
-(`base: '/Bingo_App/'` in `vite.config.ts`, target
-`skyewalker3.github.io/Bingo_App/`) — changing the hosting target means
-updating that `base` value. Treat the following as hard constraints, not
-nice-to-haves, on any future work:
+release. Deployed as a GitHub Pages project site — `.github/workflows/
+deploy-pages.yml` builds and publishes `dist/` on every push to `main`, at
+`https://skyewalker3.github.io/Bingo_App/` (`base: '/Bingo_App/'` in
+`vite.config.ts` matches this; changing the hosting target means updating
+both the workflow and that `base` value). Pages requires either a public
+repo or a paid GitHub plan — this repo is public specifically so Pages can
+be free; keep that in mind before ever making it private again. Treat the
+following as hard constraints, not nice-to-haves, on any future work:
 
 - **Touch target size** — controls need to stay comfortably tappable on a
   phone, not just clickable with a mouse — see "Touch targets" below. Done
